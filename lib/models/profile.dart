@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
 
@@ -68,6 +69,19 @@ abstract class Profile with _$Profile {
       url: url,
       id: id,
       autoUpdateDuration: defaultUpdateDuration,
+    );
+  }
+
+  /// 从协议链接 (vless:// 等) 创建 Profile
+  static Future<Profile> fromProtocolLink(String link) async {
+    final result = proxyProtocolParser.parse(link);
+    if (result == null) {
+      throw '无法解析协议链接，请检查格式是否正确';
+    }
+    // 将原始链接存入 url 字段，使 Profile 被正确分类为 ProfileType.url
+    final profile = Profile.normal(label: result.name, url: link);
+    return profile.saveFile(
+      Uint8List.fromList(utf8.encode(result.yamlContent)),
     );
   }
 }

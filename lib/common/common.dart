@@ -33,6 +33,8 @@ export 'pipe.dart';
 export 'preferences.dart';
 export 'print.dart';
 export 'protocol.dart';
+export 'protocol/vless.dart';
+export 'protocol_parser.dart';
 export 'proxy.dart';
 export 'render.dart';
 export 'request.dart';

@@ -49,7 +49,7 @@ class AddProfileView extends StatelessWidget {
           if (value == null || value.isEmpty) {
             return appLocalizations.emptyTip('').trim();
           }
-          if (!value.isUrl) {
+          if (!value.isUrl && !value.isProtocolLink) {
             return appLocalizations.urlTip('').trim();
           }
           return null;

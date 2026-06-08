@@ -934,6 +934,10 @@ class ProfilesAction extends _$ProfilesAction {
     final profile = await globalState.loadingRun(
       tag: LoadingTag.profiles,
       () async {
+        // 检测是否为协议链接 (vless:// 等)
+        if (url.isProtocolLink) {
+          return Profile.fromProtocolLink(url);
+        }
         return Profile.normal(url: url).update();
       },
       title: currentAppLocalizations.addProfile,
