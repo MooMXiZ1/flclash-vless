@@ -11,7 +11,6 @@
 //   - ssr:// (ShadowsocksR)
 
 import 'package:fl_clash/common/common.dart';
-import 'protocol/vless.dart';
 
 /// 协议解析结果
 class ProtocolParseResult {

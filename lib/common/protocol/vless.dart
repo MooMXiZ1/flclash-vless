@@ -215,7 +215,7 @@ class VlessConfig {
     );
   }
 
-  /// 尝试 base64 解码 (兼容 vless://<base64> 格式)
+  /// 尝试 base64 解码 (兼容 `vless://<base64>` 格式)
   static String _tryDecodeBase64(String uriString) {
     const prefix = 'vless://';
     if (!uriString.startsWith(prefix)) return uriString;

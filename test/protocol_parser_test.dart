@@ -2,7 +2,6 @@
 //
 // 运行方式: flutter test test/protocol_parser_test.dart
 
-import 'package:fl_clash/common/protocol/vless.dart';
 import 'package:fl_clash/common/protocol_parser.dart';
 import 'package:flutter_test/flutter_test.dart';
 

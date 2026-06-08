@@ -208,10 +208,8 @@ bool isProtocolLink(String input) {
 // ===== 测试框架 =====
 int _passed = 0;
 int _failed = 0;
-String _currentGroup = '';
 
 void group(String name, void Function() body) {
-  _currentGroup = name;
   print('\n  $name');
   body();
 }
